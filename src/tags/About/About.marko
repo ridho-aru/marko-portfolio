@@ -40,14 +40,20 @@ import style from "./About.module.css";
     </div>
 
     <div class=style.aboutImageWrapper>
-      <img
-        src=profileImg
-        alt="Working portrait"
-        class=style.aboutImage
-        width=400
-        height=500
-        sizes="(min-width: 901px) 400px, 350px"
-        loading="lazy">
+      <picture>
+        <source
+          media="(min-width: 901px)"
+          srcset=profileImg
+          width=400
+          height=500>
+        <img
+          src=profileImg
+          alt="Working portrait"
+          class=style.aboutImage
+          width=350
+          height=437
+          loading="lazy">
+      </picture>
       <div class=style.experienceBadge>
         <span class=style.years>
           2+
