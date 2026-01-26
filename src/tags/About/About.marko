@@ -1,0 +1,59 @@
+import profileImg from "@/assets/profile-1.webp";
+import SectionHeader from "../SectionHeader/SectionHeader.marko";
+import style from "./About.module.css";
+
+<section class=style.section id="about">
+  <SectionHeader title="About Me"/>
+
+  <div class=style.aboutGrid>
+    <div>
+      <p class=style.textLg>
+        Passionate about creating intuitive and dynamic user experiences. My
+        journey in web development started 2+ years ago, exploring the vast
+        landscape of JavaScript libraries and frameworks.
+      </p>
+      <p class=style.text>
+        While my expertise lies in Front End development using React and Modern
+        JavaScript, I am equally comfortable diving into Back End technologies
+        to build RESTful APIs and handle data exchange. I believe in writing
+        clean, maintainable code that solves real-world problems.
+      </p>
+
+      <div class=style.infoGrid>
+        <div class=style.infoItem>
+          <span class=style.label>
+            Residence
+          </span>
+          <span class=style.value>
+            Tangerang Selatan, Indonesia
+          </span>
+        </div>
+        <div class=style.infoItem>
+          <span class=style.label>
+            Email
+          </span>
+          <span class=style.value>
+            aar.frontline@gmail.com
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class=style.aboutImageWrapper>
+      <img
+        src=profileImg
+        alt="Working portrait"
+        class=style.aboutImage
+        width=400
+        height=500>
+      <div class=style.experienceBadge>
+        <span class=style.years>
+          2+
+        </span>
+        <span class=style.badgeText>
+          Years Experience
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

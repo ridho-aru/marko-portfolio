@@ -1,0 +1,77 @@
+import LogoTopLeft from "@/assets/logos/logo-hero-top-left.svg";
+import { SKILLS } from "@/data/constants";
+import SectionHeader from "../SectionHeader/SectionHeader.marko";
+import style from "./Skills.module.css";
+
+<section class=style.section id="skills">
+  <div class=[style.bgOverlay, style.bgTopLeft]>
+    <img
+      src=LogoTopLeft
+      alt=""
+      role="presentation"
+      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover">
+  </div>
+  <SectionHeader title="Technical Skills"/>
+
+  <div class=style.skillsContainer>
+    <div>
+      <h3 class=style.subHeading>
+        Frontend Development
+      </h3>
+      <div class=style.skillList>
+        <for|skill| of=SKILLS.frontend>
+          <div class=style.skillCard>
+            <div class=style.skillIconWrapper>
+              <if=skill.icon>
+                <img src=skill.icon alt=skill.name width=24 height=24>
+              </if>
+              <else>
+                <span>💻</span>
+              </else>
+            </div>
+            <div class=style.skillDetails>
+              <span class=style.skillName>
+                ${skill.name}
+              </span>
+              <div class=style.progressBarBg>
+                <div
+                  class=style.progressBarFill
+                  style=`width: ${skill.level}%`/>
+              </div>
+            </div>
+          </div>
+        </for>
+      </div>
+    </div>
+
+    <div>
+      <h3 class=style.subHeading>
+        Backend & Database
+      </h3>
+      <div class=style.skillList>
+        <for|skill| of=SKILLS.backend>
+          <div class=style.skillCard>
+            <div class=style.skillIconWrapper>
+              <if=skill.icon>
+                <img src=skill.icon alt=skill.name width=24 height=24>
+              </if>
+              <else>
+                <span>⚙️</span>
+              </else>
+            </div>
+            <div class=style.skillDetails>
+              <span class=style.skillName>
+                ${skill.name}
+              </span>
+              <div class=style.progressBarBg>
+                <div
+                  class=style.progressBarFill
+                  style=`width: ${skill.level}%`/>
+              </div>
+            </div>
+          </div>
+        </for>
+      </div>
+    </div>
+  </div>
+</section>

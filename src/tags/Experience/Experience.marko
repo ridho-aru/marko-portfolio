@@ -1,0 +1,39 @@
+import expImg from "@/assets/right-section-experience-image.webp";
+import { EXPERIENCES } from "@/data/constants";
+import SectionHeader from "../SectionHeader/SectionHeader.marko";
+import style from "./Experience.module.css";
+
+<section class=style.section id="experience">
+  <SectionHeader title="Experience"/>
+
+  <div class=style.experienceGrid>
+    <div class=style.timeline>
+      <for|exp, index| of=EXPERIENCES>
+        <div class=style.timelineItem>
+          <div class=style.timelineDot/>
+          <div class=style.timelineDate>
+            ${exp.period}
+          </div>
+          <div class=style.timelineContent>
+            <h3>${exp.role}</h3>
+            <h4>${exp.company}</h4>
+            <ul>
+              <for|point| of=exp.points>
+                <li>${point}</li>
+              </for>
+            </ul>
+          </div>
+        </div>
+      </for>
+    </div>
+
+    <div class=style.imageWrapper>
+      <img
+        src=expImg
+        alt="Experience Illustration"
+        class=style.experienceImage
+        width=400
+        height=700>
+    </div>
+  </div>
+</section>

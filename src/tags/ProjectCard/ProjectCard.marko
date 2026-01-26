@@ -1,0 +1,106 @@
+import style from "./ProjectCard.module.css";
+<const/{ item }=input>
+<let/currentSlide=0>
+static export interface Input {
+    item: {
+        title: string;
+        images: string[];
+        link?: string;
+        category: string;
+        description: string;
+        tech: string[];
+    };
+}
+
+<div class=style.projectCard>
+    <div class=style.projectImageHolder>
+        <img
+            src=(item.images[currentSlide])
+            alt=item.title
+            class=style.projectImage
+            style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+
+        <if=(item.images.length > 1)>
+            <button
+                type="button"
+                onClick(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    currentSlide =
+                        (currentSlide - 1 + item.images.length) %
+                        item.images.length;
+                }
+                aria-label="Previous image"
+                class=style.sliderBtnLeft>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M15 6l-6 6l6 6"/>
+                </svg>
+            </button>
+
+            <button
+                type="button"
+                onClick(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    currentSlide = (currentSlide + 1) % item.images.length;
+                }
+                aria-label="Next image"
+                class=style.sliderBtnRight>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9 6l6 6l-6 6"/>
+                </svg>
+            </button>
+        </if>
+
+        <div class=[style.projectOverlay, !item.link && style.noLink]>
+            <if=item.link>
+                <a
+                    href=item.link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class=style.viewBtn>
+                    View Project
+                </a>
+            </if>
+        </div>
+    </div>
+
+    <div class=style.projectInfo>
+        <span class=style.projectCategory>
+            ${item.category}
+        </span>
+        <h3 class=style.projectTitle>
+            ${item.title}
+        </h3>
+        <p class=style.projectDescription>
+            ${item.description}
+        </p>
+        <div class=style.projectTechStack>
+            <for|t| of=item.tech>
+                <span class=style.projectTech>
+                    ${t}
+                </span>
+            </for>
+        </div>
+    </div>
+</div>

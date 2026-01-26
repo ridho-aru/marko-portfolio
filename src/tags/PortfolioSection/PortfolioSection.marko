@@ -1,0 +1,22 @@
+import LogoBottomRight from "@/assets/logos/logo-hero-bottom-right.svg";
+import { PORTFOLIO_ITEMS } from "@/data/portfolio";
+import ProjectCard from "../ProjectCard/ProjectCard.marko";
+import SectionHeader from "../SectionHeader/SectionHeader.marko";
+import style from "./PortfolioSection.module.css";
+
+<section class=style.section id="portfolio">
+  <div class=[style.bgOverlay, style.bgBottomRight]>
+    <img
+      src=LogoBottomRight
+      alt=""
+      role="presentation"
+      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover">
+  </div>
+  <SectionHeader title="Featured Projects"/>
+
+  <div class=style.portfolioGrid>
+    <for|item, index| of=PORTFOLIO_ITEMS>
+      <ProjectCard item=item/>
+    </for>
+  </div>
+</section>

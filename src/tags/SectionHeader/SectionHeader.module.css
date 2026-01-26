@@ -1,0 +1,20 @@
+.sectionHeader {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+
+.headingLine {
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}

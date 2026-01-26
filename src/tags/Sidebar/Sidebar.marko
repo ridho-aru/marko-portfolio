@@ -1,0 +1,154 @@
+import profileImg from "@/assets/profile.webp";
+import { NAVS } from "@/data/constants";
+import style from "./Sidebar.module.css";
+
+<let/activeSection="home">
+
+<script>
+  const handleScroll = () => {
+    const offset = 150;
+    // Basic Intersection Check
+    for (const nav of NAVS) {
+      const element = document.getElementById(nav.id);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= offset && rect.bottom >= offset) {
+          activeSection = nav.id;
+          break;
+        }
+      }
+    }
+  };
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Initial check
+
+  return () => window.removeEventListener("scroll", handleScroll);
+</script>
+
+<aside class=style.sidebar>
+  <div class=style.sidebarHeader>
+    <div class=style.profileWrapper>
+      <img
+        src=profileImg
+        alt="Achmad Ahlar Ridha"
+        class=style.profileImage
+        width=100
+        height=100>
+    </div>
+    <div>
+      <div class=style.name>
+        Achmad Ahlar R.
+      </div>
+      <p class=style.role>
+        Full Stack Developer
+      </p>
+    </div>
+  </div>
+
+  <nav class=style.nav>
+    <for|nav| of=NAVS>
+      <a
+        href=`#${nav.id}`
+        class=[style.navLink, activeSection === nav.id && style.active]
+        onClick() {
+          activeSection = nav.id;
+        }>
+        <span class=style.navIcon>
+          ${nav.icon}
+        </span>
+        <span class=style.navLabel>
+          ${nav.label}
+        </span>
+      </a>
+    </for>
+  </nav>
+
+  <div class=style.sidebarFooter>
+    <div class=style.socialLinks>
+      <a
+        href="https://github.com/ridho-aru/"
+        target="_blank"
+        rel="noreferrer"
+        title="Achmad Ahlar Ridha's GitHub Profile"
+        aria-label="GitHub">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class=style.socialIcon
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"/>
+        </svg>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/aar-ridho/"
+        target="_blank"
+        rel="noreferrer"
+        title="Achmad Ahlar Ridha's LinkedIn Profile"
+        aria-label="LinkedIn">
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class=style.socialIcon
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <path d="M8 11v5"/>
+          <path d="M8 8v.01"/>
+          <path d="M12 16v-5"/>
+          <path d="M16 16v-3a2 2 0 1 0 -4 0"/>
+          <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10"/>
+        </svg>
+      </a>
+      <a
+        href="https://www.instagram.com/_aru.ridho/"
+        target="_blank"
+        rel="noreferrer"
+        title="Achmad Ahlar Ridha's Instagram Profile"
+        aria-label="Instagram">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class=style.socialIcon
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+          <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"/>
+          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/>
+          <path d="M16.5 7.5l0 .01"/>
+        </svg>
+      </a>
+    </div>
+    <div class=style.copyright>
+      2026 Achmad A.R. | Vibe Coded with Claude + Gemini${" "}
+      <br>
+      <span>
+        Icons by${" "}
+        <a href="https://icons8.com/">
+          Icons8.com
+        </a>
+        ${", "}
+        <a href="https://svgrepo.com/">
+          svgrepo.com
+        </a>
+        ${"."}
+      </span>
+    </div>
+  </div>
+</aside>

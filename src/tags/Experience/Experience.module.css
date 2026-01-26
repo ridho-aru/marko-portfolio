@@ -1,0 +1,121 @@
+.section {
+  padding: 60px 24px;
+  border-bottom: 1px solid var(--border-color);
+  container: experience / inline-size;
+}
+
+@media (min-width: 769px) {
+  .section {
+    padding: 100px 60px;
+  }
+}
+
+.experienceGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.timeline {
+  position: relative;
+}
+
+.imageWrapper {
+  display: none;
+}
+
+.experienceImage {
+  width: 400px;
+  height: 700px;
+  display: block;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timelineItem {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 60px;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -5px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.timelineDate {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #eff6ff;
+  color: var(--primary-color);
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.timelineContent h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.timelineContent h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.timelineContent p {
+  color: var(--text-secondary);
+}
+
+.timelineContent ul {
+  padding-left: 20px;
+  color: var(--text-secondary);
+  list-style-type: disc;
+  margin-top: 8px;
+}
+
+.timelineContent li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+@container experience (min-width: 901px) {
+  .experienceGrid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .imageWrapper {
+    position: sticky;
+    display: flex;
+    justify-content: center;
+    top: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 20px 20px 0 var(--border-color);
+  }
+}
