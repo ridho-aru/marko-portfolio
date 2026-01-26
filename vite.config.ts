@@ -12,6 +12,10 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, './src'),
     },
   },
+  build: {
+    cssCodeSplit: false, // Bundle all CSS into single file
+    assetsInlineLimit: 10240, // Inline assets < 10KB (includes small CSS)
+  },
   plugins: [
     marko({
       adapter: adapter(),
