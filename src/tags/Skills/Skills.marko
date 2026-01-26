@@ -9,7 +9,10 @@ import style from "./Skills.module.css";
       src=LogoTopLeft
       alt=""
       role="presentation"
-      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover">
+      width="300"
+      height="300"
+      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover"
+      loading="lazy">
   </div>
   <SectionHeader title="Technical Skills"/>
 
@@ -23,7 +26,12 @@ import style from "./Skills.module.css";
           <div class=style.skillCard>
             <div class=style.skillIconWrapper>
               <if=skill.icon>
-                <img src=skill.icon alt=skill.name width=24 height=24>
+                <img
+                  src=skill.icon
+                  alt=skill.name
+                  width=24
+                  height=24
+                  loading="lazy">
               </if>
               <else>
                 <span>💻</span>
@@ -53,7 +61,12 @@ import style from "./Skills.module.css";
           <div class=style.skillCard>
             <div class=style.skillIconWrapper>
               <if=skill.icon>
-                <img src=skill.icon alt=skill.name width=24 height=24>
+                <img
+                  src=skill.icon
+                  alt=skill.name
+                  width=24
+                  height=24
+                  loading="lazy">
               </if>
               <else>
                 <span>⚙️</span>

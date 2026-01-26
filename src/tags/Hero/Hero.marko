@@ -8,14 +8,24 @@ import style from "./Hero.module.css";
       src=LogoBottomRight
       alt=""
       role="presentation"
-      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover">
+      width="600"
+      height="600"
+      sizes="(min-width: 769px) 600px, 400px"
+      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover"
+      fetchpriority="high"
+      loading="eager">
   </div>
   <div class=[style.bgOverlay, style.bgTopLeft]>
     <img
       src=LogoTopLeft
       alt=""
       role="presentation"
-      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover">
+      width="300"
+      height="300"
+      sizes="300px"
+      style="position:absolute;height:100%;width:100%;inset:0;object-fit:cover"
+      fetchpriority="high"
+      loading="eager">
   </div>
   <div class=style.heroContent>
     <span class=style.greeting>

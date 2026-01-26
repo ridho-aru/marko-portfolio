@@ -2,6 +2,9 @@ import Sidebar from "../tags/Sidebar/Sidebar.marko";
 import "@/styles/globals.css";
 import "@fontsource-variable/geist";
 import "@fontsource-variable/geist-mono";
+import profileImg from "@/assets/profile.webp";
+import LogoBottomRight from "@/assets/logos/logo-hero-bottom-right.svg";
+import LogoTopLeft from "@/assets/logos/logo-hero-top-left.svg";
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,6 +14,9 @@ import "@fontsource-variable/geist-mono";
       name="description"
       content="Portfolio of Achmad Ahlar Ridha - Front End Web Developer">
     <title>Achmad Ahlar Ridha - Web Developer Portfolio</title>
+    <link rel="preload" as="image" href=profileImg>
+    <link rel="preload" as="image" href=LogoBottomRight>
+    <link rel="preload" as="image" href=LogoTopLeft>
   </head>
   <body>
     <div class="app-container">
