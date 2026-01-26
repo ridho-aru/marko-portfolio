@@ -2,6 +2,9 @@ import profileImg from "@/assets/profile-1.webp";
 import SectionHeader from "../SectionHeader/SectionHeader.marko";
 import style from "./About.module.css";
 
+<const/JOURNEY_START_YEAR=2018>
+<const/experienceYears=(new Date().getFullYear() - JOURNEY_START_YEAR)>
+
 <section class=style.section id="about">
   <SectionHeader title="About Me"/>
 
@@ -9,7 +12,7 @@ import style from "./About.module.css";
     <div>
       <p class=style.textLg>
         Passionate about creating intuitive and dynamic user experiences. My
-        journey in web development started 2+ years ago, exploring the vast
+        journey in web development started ${experienceYears}+ years ago, exploring the vast
         landscape of JavaScript libraries and frameworks.
       </p>
       <p class=style.text>
@@ -56,7 +59,7 @@ import style from "./About.module.css";
       </picture>
       <div class=style.experienceBadge>
         <span class=style.years>
-          2+
+          ${experienceYears}+
         </span>
         <span class=style.badgeText>
           Years Experience
