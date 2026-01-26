@@ -13,9 +13,8 @@
   --border-color: #e5e7eb;
 
   /* Fonts */
-  --font-primary:
-    'Geist Variable', 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Geist Mono Variable', monospace;
+  --font-primary: 'Geist Variable', 'Geist', sans-serif;
+  --font-mono: 'Geist Mono Variable', 'Geist Mono', monospace;
 }
 
 html {
