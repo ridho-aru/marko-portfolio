@@ -117,7 +117,7 @@
     grid-template-columns: 3fr 2fr;
   }
   .aboutImageWrapper {
-    place-self: auto;
+    place-self: center;
     width: 400px;
     height: 500px;
     order: 0;
