@@ -5,7 +5,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 32px);
-  max-width: 380px;
+  max-width: 343px;
   min-height: auto;
   display: flex;
   flex-direction: row;
