@@ -32,7 +32,7 @@ export const SKILLS = {
     { name: 'jQuery', level: 80, icon: jqueryLogo },
     {
       name: 'Azure AD',
-      level: 70,
+      level: 40,
       icon: 'https://img.icons8.com/color/48/000000/azure-1.png',
     },
   ],
@@ -53,7 +53,7 @@ export const SKILLS = {
     },
     {
       name: 'AWS',
-      level: 70,
+      level: 40,
       icon: 'https://img.icons8.com/color/48/000000/amazon-web-services.png',
     },
   ],
